@@ -1,0 +1,6 @@
+development: &development
+  server: "localhost:11211"
+test:
+  <<: *development
+production: 
+  <<: *development
