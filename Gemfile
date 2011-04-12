@@ -5,6 +5,7 @@ gem "thin"
 gem "faye"
 gem "sinatra"
 gem "settingslogic"
+gem "dalli"
 
 group :test do
   gem "rspec"

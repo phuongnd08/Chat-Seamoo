@@ -1,6 +1,9 @@
 development: &development
   server: "localhost:11211"
+  nspace: chat_dev
 test:
   <<: *development
+  nspace: chat_test
 production: 
   <<: *development
+  nspace: chat_prod
