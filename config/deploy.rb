@@ -19,11 +19,11 @@ role :web, "chat.dautri.net"                          # Your HTTP server, Apache
 
 namespace :deploy do
   task :start, :roles => [:web, :app] do
-    run "cd #{current_path} && nohup thin -C thin/production.yml -R config.ru start"
+    run "cd #{current_path} && nohup bundle exec thin -C thin/production.yml -R config.ru start"
   end
  
   task :stop, :roles => [:web, :app] do
-    run "cd #{current_path} && nohup thin -C thin/production.yml -R config.ru stop"
+    run "cd #{current_path} && nohup bundle exec thin -C thin/production.yml -R config.ru stop"
   end
  
   task :restart, :roles => [:web, :app] do
