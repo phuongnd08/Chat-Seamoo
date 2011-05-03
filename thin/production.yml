@@ -3,7 +3,7 @@ chdir: /home/ubuntu/chat_app/current
 address: 127.0.0.1
 user: ubuntu
 group: ubuntu
-port: 4000
+port: 3500
 pid: /home/ubuntu/chat_app/current/tmp/thin.pid
 rackup: /home/ubuntu/chat_app/current/config.ru
 log: /home/ubuntu/chat_app/current/log/thin.log
