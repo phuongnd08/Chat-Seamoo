@@ -1,15 +1,18 @@
 require 'sinatra'
+require 'sinatra/jsonp'
 module History
   class App < Sinatra::Base
-    get '/' do
-      content_type :json
-      MessagesLogger.last((params[:count] || Settings::History.capacity).to_i).to_json
+    helpers Sinatra::Jsonp
+    get '/history' do
+      jsonp MessagesLogger.last(params[:channel], (params[:count] || Settings::History.capacity).to_i)
     end
   end
 
   class Extension
     def incoming(message, callback)
-      MessagesLogger.add(message)
+      unless message["channel"] =~ /\/meta\//
+        MessagesLogger.add(message["channel"], message["data"])
+      end
       callback.call(message)
     end
   end

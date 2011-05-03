@@ -6,6 +6,7 @@ gem "faye"
 gem "sinatra"
 gem "settingslogic"
 gem "dalli"
+gem "sinatra-jsonp", :require => "sinatra/jsonp"
 
 group :test do
   gem "rspec"

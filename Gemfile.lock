@@ -26,6 +26,7 @@ GEM
       thin (>= 1.2)
     highline (1.6.1)
     json (1.5.1)
+    json_pure (1.5.1)
     linecache (0.43)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
@@ -54,6 +55,9 @@ GEM
     sinatra (1.2.2)
       rack (~> 1.1)
       tilt (>= 1.2.2, < 2.0)
+    sinatra-jsonp (0.3.1)
+      json_pure (~> 1.4)
+      sinatra (~> 1.0)
     thin (1.2.11)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
@@ -73,4 +77,5 @@ DEPENDENCIES
   ruby-debug
   settingslogic
   sinatra
+  sinatra-jsonp
   thin
