@@ -13,7 +13,7 @@ module History
       unless message["channel"] =~ /\/meta\//
         MessagesLogger.add(message["channel"], message["data"])
       end
-      callback.call
+      callback.call(message)
     end
   end
 end

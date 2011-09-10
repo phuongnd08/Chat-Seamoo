@@ -47,7 +47,7 @@ describe "History" do
           message = {"channel" => "/meta/wow", "data" => "abc"}
           MessagesLogger.should_not_receive(:add)
           called = false
-          History::Extension.new.incoming(message, lambda{ called = true })
+          History::Extension.new.incoming(message, lambda{ |msg| called = true })
           called.should be_true
         end
       end
@@ -56,7 +56,7 @@ describe "History" do
           message = {"channel" => "/leagues/1", "data" => "abc"}
           called = false
           MessagesLogger.should_receive(:add).with("/leagues/1", message["data"])
-          History::Extension.new.incoming(message, lambda{ called = true })
+          History::Extension.new.incoming(message, lambda{ |msg| called = true })
           called.should be_true
         end
       end
