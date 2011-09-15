@@ -13,24 +13,24 @@ set :deploy_via, :remote_cache
 set :deploy_to, "/home/#{user}/#{application}"
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-role :app, "chat.dautri.net"                          # Your HTTP server, Apache/etc
-role :db, "chat.dautri.net", :primary => true                          # Your HTTP server, Apache/etc
-role :web, "chat.dautri.net"                          # Your HTTP server, Apache/etc
+role :app, "46.137.230.20"                          # Your HTTP server, Apache/etc
+role :db, "46.137.230.20", :primary => true                          # Your HTTP server, Apache/etc
+role :web, "46.137.230.20"                          # Your HTTP server, Apache/etc
 
 namespace :deploy do
   task :start, :roles => [:web, :app] do
     run "cd #{current_path} && nohup bundle exec thin -C thin/production.yml -R config.ru start"
   end
- 
+
   task :stop, :roles => [:web, :app] do
     run "cd #{current_path} && nohup bundle exec thin -C thin/production.yml -R config.ru stop"
   end
- 
+
   task :restart, :roles => [:web, :app] do
     stop
     start
   end
- 
+
   # This will make sure that Capistrano doesn't try to run rake:migrate (this is not a Rails project!)
   task :cold do
     update
