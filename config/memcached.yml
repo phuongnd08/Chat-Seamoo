@@ -1,9 +1,0 @@
-development: &development
-  server: "127.0.0.1:11211"
-  nspace: chat_dev
-test:
-  <<: *development
-  nspace: chat_test
-production:
-  <<: *development
-  nspace: chat_prod
