@@ -2,3 +2,4 @@ tags
 dautri.pem
 .bundle
 *.pid
+log/
