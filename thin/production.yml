@@ -1,12 +1,12 @@
 environment: production
-chdir: /home/root/push_app/current
+chdir: ./
 address: 0.0.0.0
 user: root
 group: root
 port: 3500
-pid: /home/root/push_app/current/tmp/thin.pid
-rackup: /home/root/push_app/current/config.ru
-log: /home/root/push_app/current/log/thin.log
+pid: ./tmp/thin.pid
+rackup: ./config.ru
+log: ./log/thin.log
 max_conns: 1024
 timeout: 30
 max_persistent_conns: 512
