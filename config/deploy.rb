@@ -28,15 +28,16 @@ set :bundle_without,  [:development, :test, :deploy]
 
 namespace :deploy do
   task :start, :roles => [:web, :app] do
-    run "cd #{current_path} && bundle exec thin -C thin/production.yml -R config.ru start"
+    run "cd #{current_path} && bundle exec thin -C thin/production.yml start"
   end
 
   task :stop, :roles => [:web, :app] do
-    run "cd #{current_path} && bundle exec thin -C thin/production.yml -R config.ru stop"
+    run "cd #{current_path} && bundle exec thin -C thin/production.yml stop"
   end
 
   task :restart, :roles => [:web, :app] do
-    run "cd #{current_path} && bundle exec thin -C thin/production.yml -R config.ru restart"
+    stop
+    start
   end
 
   # This will make sure that Capistrano doesn't try to run rake db:migrate (this is not a Rails project!)
