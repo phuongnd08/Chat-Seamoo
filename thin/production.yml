@@ -4,7 +4,7 @@ address: 0.0.0.0
 user: root
 group: root
 port: 3500
-pid: ./tmp/thin.pid
+pid: ./tmp/pids/thin.pid
 rackup: ./config.ru
 log: ./log/thin.log
 max_conns: 1024
