@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem "rack"
 gem "thin"
-gem "faye", "~> 0.7.0"
+gem "faye"
 gem "sinatra"
 
 group :development, :test do
