@@ -20,7 +20,7 @@ end
 role :app, target_server
 role :db, target_server, :primary => true                          # Your HTTP target_server, Apache/etc
 role :web, target_server
-set :rvm_ruby_string, '1.9.3@push_app'
+set :rvm_ruby_string, '1.9.3-p125@push_app'
 set :rvm_type, :system
 
 set :bundle_flags,    "--deployment"
